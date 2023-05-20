@@ -13,8 +13,8 @@ const GameCard = ({ game }: Props) => {
   return (
     <Card>
       <Image
-        objectFit={"cover"}
-        height={{ sm: "250px", md: "200px", lg: "200px" }}
+        objectFit={{ sm: "fill", md: "cover" }}
+        height={{ sm: "200px", md: "200px", lg: "200px" }}
         src={getCroppedImageUrl(game.background_image)}
       />
       <CardBody>
