@@ -25,14 +25,14 @@ function App() {
         <NavBar />
       </GridItem>
       <Show above="lg">
-        <GridItem pl="2" bg="pink.300" area={"nav"}>
+        <GridItem pl="2" area={"nav"}>
           Nav
         </GridItem>
       </Show>
       <GridItem pl="2" area={"main"}>
         <GameGrid />
       </GridItem>
-      <GridItem pl="2" bg="blue.300" area={"footer"}>
+      <GridItem pl="2" area={"footer"}>
         Footer
       </GridItem>
     </Grid>
