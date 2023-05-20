@@ -27,11 +27,11 @@ function App() {
       </GridItem>
       <Show above="lg">
         <GridItem
-          width={"200px"}
+          width={"100px"}
           pl="2"
           // bg={"gray.900"}
           area={"nav"}
-          padding={8}
+          padding={2}
         >
           <GenreList />
         </GridItem>
