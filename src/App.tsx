@@ -15,6 +15,10 @@ function App() {
               "nav main" 
               "nav footer"`,
       }}
+      templateColumns={{
+        base: `1fr`,
+        lg: "200px 1fr",
+      }}
       // gridTemplateRows={"50px 1fr 30px"}
       // gridTemplateColumns={"150px 1fr"}
       // h="200px"
@@ -27,7 +31,6 @@ function App() {
       </GridItem>
       <Show above="lg">
         <GridItem
-          width={"100px"}
           pl="2"
           // bg={"gray.900"}
           area={"nav"}
