@@ -1,6 +1,5 @@
 import {
   Button,
-  Image,
   Menu,
   MenuButton,
   MenuItem,
@@ -20,10 +19,15 @@ import { MdPhoneIphone } from "react-icons/md";
 import { SiNintendo } from "react-icons/si";
 import { BsChevronDown } from "react-icons/bs";
 
-import usePlatforms from "../hooks/usePlatform";
+import usePlatforms, { Platform } from "../hooks/usePlatform";
 import { ReactNode } from "react";
 
-const PlatformSelector = () => {
+interface Props {
+  onSelectPlatform: (platform: Platform) => void;
+  selectedPlatform: Platform | null;
+}
+
+const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
   const { data, error } = usePlatforms();
 
   const iconMap: { [key: string]: ReactNode } = {
@@ -44,11 +48,16 @@ const PlatformSelector = () => {
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        Platforms
+        {selectedPlatform?.name || "Platforms"}
       </MenuButton>
       <MenuList>
         {data.map((platform) => (
-          <MenuItem gap={4} minH="48px" key={platform.id}>
+          <MenuItem
+            onClick={() => onSelectPlatform(platform)}
+            gap={4}
+            minH="48px"
+            key={platform.id}
+          >
             {!iconMap[platform.slug]
               ? iconMap["others"]
               : iconMap[platform.slug]}

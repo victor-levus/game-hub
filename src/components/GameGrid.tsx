@@ -6,13 +6,18 @@ import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
 import { Genre } from "../hooks/useGenre";
 import PlatformSelector from "./PlatformSelector";
+import { useState } from "react";
+import { Platform } from "../hooks/usePlatform";
 
 interface Props {
   selecetedGenre: Genre | null;
 }
 
 const GameGrid = ({ selecetedGenre }: Props) => {
-  const { data, error, isLoading } = useGame(selecetedGenre);
+  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
+    null
+  );
+  const { data, error, isLoading } = useGame(selecetedGenre, selectedPlatform);
 
   const skeletons = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
@@ -22,7 +27,10 @@ const GameGrid = ({ selecetedGenre }: Props) => {
     <>
       {error && <Text>{error}</Text>}
       <HStack paddingX={3} justifyContent={"space-between"}>
-        <PlatformSelector />
+        <PlatformSelector
+          onSelectPlatform={(platform) => setSelectedPlatform(platform)}
+          selectedPlatform={selectedPlatform}
+        />
         <Text>Total Games: {data.length}</Text>
       </HStack>
       <SimpleGrid
