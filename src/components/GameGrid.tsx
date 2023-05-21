@@ -1,11 +1,9 @@
-import { HStack, SimpleGrid, Text } from "@chakra-ui/react";
+import { SimpleGrid, Text } from "@chakra-ui/react";
 
 import useGame from "../hooks/useGame";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
-import { Genre } from "../hooks/useGenre";
-import { Platform } from "../hooks/usePlatform";
 import { GameQuery } from "../App";
 
 interface Props {
@@ -23,9 +21,9 @@ const GameGrid = ({ gameQuery }: Props) => {
     <>
       {error && <Text>{error}</Text>}
       <Text
-        marginBottom={2}
+        marginBottom={{ sm: "1", md: "30px" }}
         paddingRight={3}
-        marginTop={"-35px"}
+        marginTop={{ sm: "2", md: "-30px" }}
         textAlign={"end"}
       >
         Total Games: {data.length}

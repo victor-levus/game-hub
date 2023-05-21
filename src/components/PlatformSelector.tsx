@@ -47,7 +47,12 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
 
   return (
     <Menu>
-      <MenuButton as={Button} rightIcon={<BsChevronDown />}>
+      <MenuButton
+        textAlign={"left"}
+        width={"210px"}
+        as={Button}
+        rightIcon={<BsChevronDown />}
+      >
         {selectedPlatform?.name || "Platforms"}
       </MenuButton>
       <MenuList>
