@@ -10,14 +10,16 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return (
-    <Card>
+    <Card minHeight={"350px"}>
       <Image
         objectFit={{ sm: "fill", md: "cover" }}
-        height={{ sm: "200px", md: "200px", lg: "200px" }}
+        height={"200px"}
         src={getCroppedImageUrl(game.background_image)}
       />
       <CardBody>
-        <Heading fontSize={"sm"}>{game.name.slice(0, 20)}</Heading>
+        <Heading marginTop={5} fontSize={"sm"}>
+          {game.name.slice(0, 20)}
+        </Heading>
         <HStack justifyContent={"space-between"}>
           <PlatformIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
