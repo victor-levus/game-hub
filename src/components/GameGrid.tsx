@@ -19,13 +19,13 @@ const GameGrid = ({ gameQuery }: Props) => {
 
   return (
     <>
-      {error && <Text>{error}</Text>}
+      {error && <Text>{error.message}</Text>}
       <Text
         marginBottom={{ sm: "1", md: "30px" }}
         marginTop={{ sm: "2", md: "-30px" }}
         textAlign={"end"}
       >
-        Total Games: {data.length}
+        Total Games: {data?.results.length}
       </Text>
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4, "2xl": 5 }}
@@ -38,7 +38,7 @@ const GameGrid = ({ gameQuery }: Props) => {
             </GameCardContainer>
           ))}
 
-        {data.map((game) => (
+        {data?.results.map((game) => (
           <GameCardContainer key={game.id}>
             <GameCard key={game.id} game={game} />
           </GameCardContainer>

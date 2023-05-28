@@ -28,7 +28,7 @@ interface Props {
 }
 
 const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
-  const { data, error } = usePlatforms();
+  const { data } = usePlatforms();
 
   const iconMap: { [key: string]: ReactNode } = {
     pc: <FaWindows />,
@@ -43,8 +43,6 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
     others: <BsApp />,
   };
 
-  if (error) return null;
-
   return (
     <Menu>
       <MenuButton
@@ -56,7 +54,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
         {selectedPlatform?.name || "Platforms"}
       </MenuButton>
       <MenuList>
-        {data.map((platform) => (
+        {data?.results.map((platform) => (
           <MenuItem
             onClick={() => onSelectPlatform(platform)}
             gap={4}
