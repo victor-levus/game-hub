@@ -12,11 +12,12 @@ import GenreListSkeleton from "./GenreListSkeleton";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
 }
 
-const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
+const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
   const { data, isLoading, error } = useGenres();
+
   const skeletonArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
   // if (error) return <p>{error}</p>;
@@ -45,7 +46,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
                 whiteSpace={"normal"}
                 textAlign={"left"}
                 // fontWeight={selectedGenre?.id === genre.id ? "bold" : "normal"}
-                textColor={selectedGenre?.id === genre.id ? "red" : ""}
+                textColor={selectedGenreId === genre.id ? "red" : ""}
               >
                 {genre.name}
               </Button>
