@@ -27,8 +27,7 @@ function App() {
                 "footer"`,
 
         lg: `"header header" 
-              "nav main" 
-              "nav footer"`,
+              "nav main"`,
       }}
       templateColumns={{
         base: `1fr`,
