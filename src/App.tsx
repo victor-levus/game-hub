@@ -65,9 +65,6 @@ function App() {
         </Flex>
         <GameGrid gameQuery={gameQuery} />
       </GridItem>
-      <GridItem pl="2" area={"footer"}>
-        Footer
-      </GridItem>
     </Grid>
   );
 }
