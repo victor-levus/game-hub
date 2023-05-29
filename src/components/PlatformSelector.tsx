@@ -19,17 +19,15 @@ import { MdPhoneIphone } from "react-icons/md";
 import { SiNintendo } from "react-icons/si";
 import { BsChevronDown } from "react-icons/bs";
 
-import usePlatforms, { Platform } from "../hooks/usePlatforms";
+import usePlatforms from "../hooks/usePlatforms";
 import { ReactNode } from "react";
 import usePlatform from "../hooks/usePlatform";
+import useGameQueryStore from "../store";
 
-interface Props {
-  onSelectPlatform: (platform: Platform) => void;
-  selectedPlatformId?: number;
-}
-
-const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
+const PlatformSelector = () => {
   const { data: platforms } = usePlatforms();
+  const setSelectedPlatformId = useGameQueryStore((s) => s.setPlatformId);
+  const selectedPlatformId = useGameQueryStore((s) => s.gameQuery.platformId);
 
   const platform = usePlatform(selectedPlatformId);
 
@@ -59,7 +57,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
       <MenuList>
         {platforms?.results.map((platform) => (
           <MenuItem
-            onClick={() => onSelectPlatform(platform)}
+            onClick={() => setSelectedPlatformId(platform.id)}
             gap={4}
             minH="48px"
             key={platform.id}
