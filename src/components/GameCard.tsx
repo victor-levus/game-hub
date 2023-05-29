@@ -1,4 +1,4 @@
-import { Game } from "../hooks/useGames";
+import { Link } from "react-router-dom";
 import {
   Box,
   Card,
@@ -8,6 +8,8 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
+
+import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
 import getCroppedImageUrl from "../services/image-url";
@@ -27,7 +29,7 @@ const GameCard = ({ game }: Props) => {
       <CardBody>
         <Box height={"90px"}>
           <Heading marginTop={3} fontSize={"sm"}>
-            {game.name.slice(0, 20)}
+            <Link to={"/games/" + game.slug}>{game.name.slice(0, 20)}</Link>
           </Heading>
           <HStack justifyContent={"space-between"}>
             <PlatformIconList

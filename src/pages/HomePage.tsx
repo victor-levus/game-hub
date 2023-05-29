@@ -21,12 +21,12 @@ const HomePage = () => {
         }}
       >
         <Show above="lg">
-          <GridItem marginTop={"130px"} area={"nav"}>
+          <GridItem area={"nav"}>
             <GenreList />
           </GridItem>
         </Show>
 
-        <GridItem marginTop={"130px"} marginX={3} area={"main"}>
+        <GridItem area={"main"}>
           <GameHeading />
           <Flex gap={3}>
             <PlatformSelector />

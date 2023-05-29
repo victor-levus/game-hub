@@ -1,4 +1,4 @@
-import { HStack, Image, Text } from "@chakra-ui/react";
+import { HStack, Image, Link, Text } from "@chakra-ui/react";
 
 import appLogo from "../assets/logo.webp";
 import ColorModeSwitch from "./ColorModeSwitch";
@@ -22,7 +22,9 @@ const NavBar = () => {
       zIndex={5}
       bg={"InfoBackground"}
     >
-      <Image src={appLogo} boxSize={"70px"} />
+      <Link width={"100px"} href="/">
+        <Image src={appLogo} boxSize={"70px"} />
+      </Link>
       <SearchInput />
       <Text whiteSpace={"nowrap"} marginX={5} textAlign={"end"}>
         <span>Total Games: </span>
