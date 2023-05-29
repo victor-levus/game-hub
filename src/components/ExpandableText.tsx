@@ -20,9 +20,9 @@ const ExpandableText = ({ children }: Props) => {
       <Text marginY={3} textAlign={"justify"}>
         {expanded ? children : summary + "......"}
       </Text>
-      <Text paddingY={2} textAlign={"end"}>
+      <Text paddingY={1} textAlign={"end"}>
         <Button
-          fontSize={"lg"}
+          size={"sm"}
           fontWeight={"bold"}
           colorScheme="yellow"
           onClick={() => setExpanded(!expanded)}
