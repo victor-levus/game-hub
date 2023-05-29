@@ -1,9 +1,10 @@
-import { HStack, Image, Link, Text } from "@chakra-ui/react";
+import { HStack, Image, Text } from "@chakra-ui/react";
 
 import appLogo from "../assets/logo.webp";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 import useGame from "../hooks/useGames";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const { data: games } = useGame();
@@ -22,8 +23,8 @@ const NavBar = () => {
       zIndex={5}
       bg={"InfoBackground"}
     >
-      <Link width={"100px"} href="/">
-        <Image src={appLogo} boxSize={"70px"} />
+      <Link to="/">
+        <Image src={appLogo} boxSize={"70px"} objectFit={"cover"} />
       </Link>
       <SearchInput />
       <Text whiteSpace={"nowrap"} marginX={5} textAlign={"end"}>
