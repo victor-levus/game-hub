@@ -17,7 +17,7 @@ const ExpandableText = ({ children }: Props) => {
 
   return (
     <>
-      <Text marginY={3} textAlign={"justify"}>
+      <Text fontSize={"18px"} marginY={3} textAlign={"justify"}>
         {expanded ? children : summary + "......"}
       </Text>
       <Text paddingY={1} textAlign={"end"}>
