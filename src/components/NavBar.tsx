@@ -4,10 +4,9 @@ import appLogo from "../assets/logo.webp";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 import useGame from "../hooks/useGames";
-import useGameQueryStore from "../store";
 
 const NavBar = () => {
-  const { data: games } = useGame(useGameQueryStore);
+  const { data: games } = useGame();
 
   const fetchedGamesCount = games?.pages.reduce(
     (acc, page) => page.results.length + acc,
