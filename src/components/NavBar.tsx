@@ -21,7 +21,7 @@ const NavBar = () => {
       position={"fixed"}
       width={"100%"}
       zIndex={5}
-      bg={"InfoBackground"}
+      bg={"Background"}
     >
       <Link to="/">
         <Image src={appLogo} boxSize={"70px"} objectFit={"cover"} />

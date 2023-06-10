@@ -19,7 +19,7 @@ const GameTrailer = ({ gameId }: Props) => {
       width={"100%"}
       controls
       poster={first?.preview}
-      src={first?.data[480]}
+      src={first?.data[480] ? first?.data[480] : first?.data["max"]}
     />
   ) : null;
 };
