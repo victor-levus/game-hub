@@ -1,6 +1,5 @@
 import useStore from "../hooks/useStore";
-import { Box, HStack, Image, Spinner, Text } from "@chakra-ui/react";
-import ExpandableText from "./ExpandableText";
+import { Box, Image, Text } from "@chakra-ui/react";
 
 interface Props {
   storeId: number;
