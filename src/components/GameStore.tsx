@@ -9,8 +9,6 @@ interface Props {
 const GameStore = ({ storeId }: Props) => {
   const storeObj = useStore(storeId);
 
-  console.log(storeObj);
-
   return (
     <Box>
       <Image
